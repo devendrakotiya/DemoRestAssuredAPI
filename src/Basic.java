@@ -7,6 +7,8 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.Assert;
 
+import files.PayLoad;
+
 public class Basic {
 
 	public static void main(String[] args) {
@@ -43,7 +45,7 @@ public class Basic {
 		
 		//get -  there is no point to send header in get method
 		String getPlaceResponse = given().log().all().queryParam("Key", "qaclick123")
-				.queryParam("place_id", "e54519df6e9c36d7081bca15163dee54")
+				.queryParam("place_id",place_id)
 		.when().get("maps/api/place/update/json").then().assertThat().log().all().statusCode(200)
 		.extract().response().asString();
 		
