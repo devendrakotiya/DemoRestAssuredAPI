@@ -51,4 +51,20 @@ public class PayLoad {
 		return jsonBody;
 	}
 	
+	public static String Addbook(String isbn, String aisle)
+	{
+		String PayLoad =  "{\r\n"
+				+ "\r\n"
+				+ "\"name\":\"Learn Appium Automation with Java\",\r\n"
+				+ "\"isbn\":\""+isbn+"\",\r\n"
+				+ "\"aisle\":\""+aisle+"\",\r\n"
+				+ "\"author\":\"John foe\"\r\n"
+				+ "}\r\n"
+				+ "";
+		return PayLoad;
+	}
+	
+	
+	
+	
 }

@@ -20,6 +20,10 @@ public class Basic {
 		
 		RestAssured.baseURI = "https://rahulshettyacademy.com/";
 		// add place 
+		
+		// passing payload using JSON FILE <-----> 
+		// .body(new String(Files.readAllBytes(Paths.get("C:\\Users\\Owner\\Documents\\addPlace.json"))))
+		
 		String response = given().log().all().queryParam("key", "qaclick123").header("Content-Type", "application/json")
 		.body(PayLoad.addPlace()).when().post("maps/api/place/add/json")
 		.then().log().all().assertThat().statusCode(200).body("scope", equalTo("APP"))
